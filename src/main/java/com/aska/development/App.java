@@ -1,18 +1,12 @@
 package com.aska.development;
 
+import com.aska.development.config.SpringConfig;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+
 public class App {
-    //region Поля
-    //endregion
-
-    //region Свойства
-    //endregion
-
-    //region Конструктор
-    //endregion
-
-    //region Методы
-    //endregion
-
-    //region Внутренние классы
-    //endregion
+    public static void main(String[] args) {
+        final AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(SpringConfig.class);
+        final Test bean = context.getBean(Test.class);
+        System.out.println(bean.getName());
+    }
 }
